@@ -65,10 +65,6 @@ GPA: 3.723
     <img alt="top language" title="Top language" src="https://custom-icon-badges.demolab.com/github/languages/top/Rudra-P9?style=for-the-badge&logo=code&logoColor=white&label=Top%20Lang" /></a>
 </p>
 
-<p align="left">
-**Followers:** _updating..._ • **Total stars (sum):** _updating..._  
-</p>
-
 ![Rudra's GitHub stats](https://github-readme-stats.vercel.app/api?username=Rudra-P9&show_icons=true&theme=gruvbox)
 <!-- METRICS-END:live-metrics -->
 
