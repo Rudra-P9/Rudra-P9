@@ -16,8 +16,6 @@ Building reliable, efficient systems and polished user experiences. I enjoy turn
 ## 🔭 About me
 I’m a software engineer with 2 years of hands-on experience improving operations and building reliable software. I focus on shipping practical features that reduce friction and save time. I’m currently transitioning into full-time software development and open to internship / junior dev opportunities.
 
-(Info pulled from my resume: contact, education, experience, and projects) :contentReference[oaicite:1]{index=1}
-
 ---
 
 ### 🧰 Languages & Tools
@@ -57,8 +55,22 @@ GPA: 3.723
 
 ---
 
-### 📊 GitHub & Stats
+<!-- METRICS-START:live-metrics -->
+<p align="left">
+  <a href="https://github.com/Rudra-P9?tab=followers">
+    <img alt="followers" title="GitHub followers" src="https://custom-icon-badges.demolab.com/github/followers/Rudra-P9?style=for-the-badge&logo=github&logoColor=white&label=Followers" /></a>
+  <a href="https://github.com/Rudra-P9?tab=repositories&sort=stargazers">
+    <img alt="total stars" title="Total stars" src="https://custom-icon-badges.demolab.com/github/stars/Rudra-P9?style=for-the-badge&logo=github&logoColor=white&label=Stars" /></a>
+  <a href="https://github.com/Rudra-P9?tab=contributions">
+    <img alt="top language" title="Top language" src="https://custom-icon-badges.demolab.com/github/languages/top/Rudra-P9?style=for-the-badge&logo=code&logoColor=white&label=Top%20Lang" /></a>
+</p>
+
+<p align="left">
+**Followers:** _updating..._ • **Total stars (sum):** _updating..._  
+</p>
+
 ![Rudra's GitHub stats](https://github-readme-stats.vercel.app/api?username=Rudra-P9&show_icons=true&theme=gruvbox)
+<!-- METRICS-END:live-metrics -->
 
 ---
 
@@ -74,8 +86,3 @@ I started learning foundational CS concepts and gradually focused on practical s
 - Email: rudra.patel70@yahoo.com  
 - LinkedIn: https://www.linkedin.com/in/rudrap9/  
 - GitHub: https://github.com/Rudra-P9
-
----
-
-If you want this page to pull live metrics (followers, stars, recent commits) or show a live project gallery like Forrest's example, I can add the GitHub Actions + card snippets to fetch and inject those dynamic cards into your README.  
-
