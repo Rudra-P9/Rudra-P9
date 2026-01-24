@@ -1,0 +1,76 @@
+name: update-profile
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update YouTube cards
+        uses: DenverCoder1/github-readme-youtube-cards@v1
+        with:
+          channel_id: YOUR_YOUTUBE_CHANNEL_ID
+          max_videos: 6
+
+      - name: Update GitHub metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import requests, re, os, time
+
+          user = "Rudra-P9"
+          headers = {"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
+
+          u = requests.get(f"https://api.github.com/users/{user}", headers=headers).json()
+          repos = requests.get(f"https://api.github.com/users/{user}/repos?per_page=100", headers=headers).json()
+
+          followers = u.get("followers", 0)
+          stars = sum(r["stargazers_count"] for r in repos if "stargazers_count" in r)
+
+          with open("README.md", "r", encoding="utf-8") as f:
+              readme = f.read()
+
+          replacement = f"""<!-- METRICS-START:live-metrics -->
+<p align="left">
+  <a href="https://github.com/{user}?tab=followers">
+    <img src="https://custom-icon-badges.demolab.com/github/followers/{user}?style=for-the-badge&logo=github&logoColor=white&label=Followers" /></a>
+  <a href="https://github.com/{user}?tab=repositories&sort=stargazers">
+    <img src="https://custom-icon-badges.demolab.com/github/stars/{user}?style=for-the-badge&logo=star&logoColor=white&label=Stars" /></a>
+</p>
+
+<p>
+<strong>Followers:</strong> <strong>{followers}</strong> • 
+<strong>Total Stars:</strong> <strong>{stars}</strong> • 
+<em>Updated {time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())}</em>
+</p>
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username={user}&show_icons=true&theme=gruvbox)
+<!-- METRICS-END:live-metrics -->"""
+
+          readme = re.sub(
+              r"<!-- METRICS-START:live-metrics -->.*?<!-- METRICS-END:live-metrics -->",
+              replacement,
+              readme,
+              flags=re.S
+          )
+
+          with open("README.md", "w", encoding="utf-8") as f:
+              f.write(readme)
+
+          os.system("git config user.name github-actions")
+          os.system("git config user.email github-actions@github.com")
+          os.system("git add README.md")
+          os.system("git commit -m 'update profile metrics' || true")
+          os.system("git push")
+          PY
