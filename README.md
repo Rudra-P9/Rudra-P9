@@ -82,3 +82,4 @@ I started learning foundational CS concepts and gradually focused on practical s
 - Email: rudra.patel70@yahoo.com  
 - LinkedIn: https://www.linkedin.com/in/rudrap9/  
 - GitHub: https://github.com/Rudra-P9
+- Buymeacoffee: https://buymeacoffee.com/rudrap9
